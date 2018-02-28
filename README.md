@@ -4,7 +4,8 @@ Parser and writer for various spreadsheet formats.  Pure-JS cleanroom implementa
 
 # About this fork
 **NOTE:** [This project](https://github.com/qiongqiongwoo/workbook) is a fork of the original [xlsx-style](https://github.com/protobi/workbook) project.
-This project base on xlsx-style, resolved writing large excel files causes web page crashes problem
+
+##This project base on xlsx-style, resolved writing large excel files causes web page crashes problem
 
 ## License
 
