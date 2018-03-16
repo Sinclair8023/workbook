@@ -11858,11 +11858,12 @@ function write_zip_type(wb, opts) {
 
   var z = write_zip(wb, o);
 	z.generate = z.generateAsync
+	var compress = false
 	switch(o.type) {
-		case "base64": return z.generate({type:"base64"});
-		case "binary": return z.generate({type:"string"});
-		case "buffer": return z.generate({type:"nodebuffer"});
-		case "file": return _fs.writeFileSync(o.file, z.generate({type:"nodebuffer"}));
+		case "base64": return z.generate({type:"base64", compress: compress });
+		case "binary": return z.generate({type:"string",  compress: compress });
+		case "buffer": return z.generate({type:"nodebuffer", compress: compress });
+		case "file": return _fs.writeFileSync(o.file, z.generate({type:"nodebuffer", compress: compress}));
 		default: throw new Error("Unrecognized type " + o.type);
 	}
 }
